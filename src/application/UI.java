@@ -13,7 +13,8 @@ public class UI {
         }
         System.out.println("  a b c d e f g h");
     }
-
+    
+    //Função que mostra a peça
     private static void printPiece(ChessPiece piece){
         if(piece == null){
             System.out.print("-");
