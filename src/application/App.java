@@ -29,7 +29,6 @@ public class App {
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
                 if(captured != null) {captured.add(capturedPiece);}
                 if(chessMatch.getPromoted() != null) {
-                    while()
                     System.out.print("Entre com a promoção da peça : (Q) (C) (B) (R) :");
                     //input.nextLine();
                     String type = input.nextLine().toUpperCase();
