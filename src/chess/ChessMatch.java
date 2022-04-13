@@ -1,6 +1,5 @@
 package chess;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -100,7 +99,7 @@ public class ChessMatch {
 
     public ChessPiece replacePromotedPiece(String type){
         if(promoted == null) throw new IllegalStateException("Sem especificadade da peça promovida");
-        if(!type.equals("B") && !type.equals("C") && !type.equals("R") && !type.equals("Q")) throw new InvalidParameterException("Tipo de promoção inválido.");
+        if(!type.equals("B") && !type.equals("C") && !type.equals("R") && !type.equals("Q")) return promoted;
         Position pos = promoted.getChessPosition().toPosition();
         Piece p = board.removePiece(pos);
         piecesOnTheBoard.remove(p);
@@ -280,7 +279,7 @@ public class ChessMatch {
         placeNewPiece('g', 1, new Knight(board, Color.WHITE));
         placeNewPiece('e', 1, new King(board, Color.WHITE, this));
         placeNewPiece('h', 1, new Rook(board, Color.WHITE));
-        placeNewPiece('a', 7, new Pawn(board, Color.WHITE,this));
+        placeNewPiece('a', 2, new Pawn(board, Color.WHITE,this));
         placeNewPiece('b', 2, new Pawn(board, Color.WHITE,this));
         placeNewPiece('c', 2, new Pawn(board, Color.WHITE,this));
         placeNewPiece('d', 2, new Pawn(board, Color.WHITE,this));
@@ -300,7 +299,7 @@ public class ChessMatch {
         placeNewPiece('a', 8, new Rook(board, Color.BLACK));
         placeNewPiece('e', 8, new King(board, Color.BLACK, this));
         placeNewPiece('h', 8, new Rook(board, Color.BLACK));
-        //placeNewPiece('a', 7, new Pawn(board, Color.BLACK,this));
+        placeNewPiece('a', 7, new Pawn(board, Color.BLACK,this));
         placeNewPiece('b', 7, new Pawn(board, Color.BLACK,this));
         placeNewPiece('c', 7, new Pawn(board, Color.BLACK,this));
         placeNewPiece('d', 7, new Pawn(board, Color.BLACK,this));

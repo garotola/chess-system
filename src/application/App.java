@@ -29,9 +29,14 @@ public class App {
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
                 if(captured != null) {captured.add(capturedPiece);}
                 if(chessMatch.getPromoted() != null) {
-                    System.out.println("Entre com a promoção da peça : (Q) (C) (B) (R) :");
+                    while()
+                    System.out.print("Entre com a promoção da peça : (Q) (C) (B) (R) :");
                     //input.nextLine();
-                    String type = input.nextLine();
+                    String type = input.nextLine().toUpperCase();
+                    while(!type.equals("B") && !type.equals("C") && !type.equals("R") && !type.equals("Q")){
+                        System.out.print("Invalido!!!\nEntre com a promoção da peça : (Q) (C) (B) (R) :");
+                        type = input.nextLine().toUpperCase();
+                    }
                     chessMatch.replacePromotedPiece(type);
                 }
             }catch(ChessException e){
