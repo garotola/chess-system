@@ -28,6 +28,12 @@ public class App {
                 ChessPosition target = UI.readChessPosition(input);
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
                 if(captured != null) {captured.add(capturedPiece);}
+                if(chessMatch.getPromoted() != null) {
+                    System.out.println("Entre com a promoção da peça : (Q) (C) (B) (R) :");
+                    //input.nextLine();
+                    String type = input.nextLine();
+                    chessMatch.replacePromotedPiece(type);
+                }
             }catch(ChessException e){
                 System.out.print(e.getMessage());
                 input.nextLine();input.nextLine();

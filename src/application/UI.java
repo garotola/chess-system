@@ -33,7 +33,7 @@ public class UI {
 
     public static ChessPosition readChessPosition(Scanner input){
         try{
-            String s = input.next();
+            String s = input.next(); input.nextLine();
             char column = s.charAt(0);
             int row = Integer.parseInt(s.substring(1));
             return new ChessPosition(column, row);
